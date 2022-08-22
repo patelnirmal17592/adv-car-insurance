@@ -10,7 +10,16 @@ const SearchBar = () => {
   const [value, setValue] = useState("");
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.value);
+    //   setValue(event.target.value);
+
+        let userInput: string = '  hi hello   ';
+
+      let removeSpac = userInput.trim();
+      let specialCharSearch = removeSpac.replace(/h/gi, '')
+
+    console.log(specialCharSearch)
+    
+
   };
 
   return (
@@ -28,6 +37,7 @@ const SearchBar = () => {
           label="Ask me anything about car insurance..."
           multiline
           maxRows={4}
+          type='text'
           value={value}
           onChange={handleChange}
           className={style.userInput}
