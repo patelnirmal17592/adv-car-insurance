@@ -8,5 +8,8 @@
   margin-top: 0.5em;
   padding: 1.1em 3em;
 }
+.searchBarContainer .response {
+  border: 1px solid;
+}
 
 /*# sourceMappingURL=SearchBar.module.css.map */
