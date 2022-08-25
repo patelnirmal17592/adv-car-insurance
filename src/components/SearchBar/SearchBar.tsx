@@ -7,23 +7,22 @@ import LoadingButton from "@mui/lab/LoadingButton";
 import React from "react";
 
 const SearchBar = () => {
-
   const [value, setValue] = useState("");
-  const [serverRes, setServerRes] = useState([])
+  const [serverRes, setServerRes] = useState([]);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     let userInput: string = event.target.value;
     let specCharRegex = /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/gi;
     let specialCharSearch: any = userInput.replace(specCharRegex, " ");
     let removeSpac = specialCharSearch.trim();
-    setValue(specialCharSearch);
+    setValue(removeSpac);
     // console.log(value);
   };
 
   const handleSubmit = () => {
     console.log(value);
     axios
-      .post("http://localhost:3001/car-insurance", {"data": `${value}`})
+      .post("http://localhost:3001/car-insurance", { data: `${value}` })
       .then((res) => setServerRes(res.data))
       .catch((err) => console.log(err));
   };
@@ -65,13 +64,11 @@ const SearchBar = () => {
         <div className={style.resultContainer}>
           <h4>Answer to your question: {value}</h4>
           <div className={style.content}>
-            {
-              serverRes.map((data: any, index: any) => 
-                <ul>
-                  <li>{data.text}</li>
-                </ul>
-              )
-            }
+            {serverRes.map((data: any, index: any) => (
+              <ul>
+                <li>{data.text}</li>
+              </ul>
+            ))}
           </div>
         </div>
       </div>
