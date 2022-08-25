@@ -8,6 +8,9 @@
 .searchBarWrapper .resultWrapper {
   margin: 0 auto;
   width: 70%;
+  border-top: 5px solid #0076be;
+  padding-top: 1em;
+  margin-top: 2em;
 }
 
 .searchBarContainer {

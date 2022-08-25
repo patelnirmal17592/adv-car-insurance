@@ -9,10 +9,11 @@ import React from "react";
 const SearchBar = () => {
 
   const [value, setValue] = useState("");
+  const [serverRes, setServerRes] = useState([])
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     let userInput: string = event.target.value;
-    let specCharRegex = /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/gi;
+    let specCharRegex = /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?\s]/gi;
     let specialCharSearch: any = userInput.replace(specCharRegex, " ");
     let removeSpac = specialCharSearch.trim();
     setValue(removeSpac);
@@ -23,7 +24,7 @@ const SearchBar = () => {
     console.log(value);
     axios
       .post("http://localhost:3001/car-insurance", {"data": `${value}`})
-      .then((res) => console.log(res))
+      .then((res) => setServerRes(res.data))
       .catch((err) => console.log(err));
   };
 
@@ -62,7 +63,16 @@ const SearchBar = () => {
       </div>
       <div className={style.resultWrapper}>
         <div className={style.resultContainer}>
-          Answer to your question: {value}
+          <h4>Answer to your question: {value}</h4>
+          <div className={style.content}>
+            {
+              serverRes.map((data: any, index: any) => 
+                <ul>
+                  <li>{data.text}</li>
+                </ul>
+              )
+            }
+          </div>
         </div>
       </div>
     </div>

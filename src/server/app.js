@@ -34,9 +34,7 @@ app.post('/car-insurance', (req, res) => {
   }
   
   discovery.query(parameters)
-    .then(res => res.result.results.map((data) => 
-        res.send(data)
-      ))
+    .then(response => res.send(response.result.results))
     .catch(err => {
       console.log('error:', err);
     });
