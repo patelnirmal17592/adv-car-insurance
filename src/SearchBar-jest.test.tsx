@@ -19,11 +19,13 @@ describe("Punctuation Tests", () => {
       // Arrange
       const expected = "hello world";
 
+      // Assign the current value of the Label to the input variable
       const input = screen.getByLabelText(
         "Ask me anything about breakdown insurance..."
       ) as HTMLInputElement;
 
       // Act
+      // Simulate a user inputting text into the input field
       fireEvent.change(input, { target: { value: `${tc.input}` } });
 
       // Assert
