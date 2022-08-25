@@ -1,3 +1,15 @@
+.searchBarWrapper {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 5em;
+  display: flex;
+  flex-direction: column;
+}
+.searchBarWrapper .resultWrapper {
+  margin: 0 auto;
+  width: 70%;
+}
+
 .searchBarContainer {
   width: 100%;
   display: flex;
@@ -7,9 +19,6 @@
 .searchBarContainer .search {
   margin-top: 0.5em;
   padding: 1.1em 3em;
-}
-.searchBarContainer .response {
-  border: 1px solid;
 }
 
 /*# sourceMappingURL=SearchBar.module.css.map */
