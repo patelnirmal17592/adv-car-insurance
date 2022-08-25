@@ -16,7 +16,7 @@ const SearchBar = () => {
     let specCharRegex = /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/gi;
     let specialCharSearch: any = userInput.replace(specCharRegex, " ");
     let removeSpac = specialCharSearch.trim();
-    setValue(removeSpac);
+    setValue(specialCharSearch);
     // console.log(value);
   };
 
