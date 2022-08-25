@@ -35,3 +35,15 @@ describe("Punctuation Tests", () => {
     });
   });
 });
+
+// describe("input field", () => {
+//   it("renders correctly", () => {
+//     render(<SearchBar />);
+
+//     const input = screen.getByLabelText(
+//       "Ask me anything about breakdown insurance..."
+//     ) as HTMLInputElement;
+
+//     expect(input).toBeInTheDocument();
+//   });
+// });
