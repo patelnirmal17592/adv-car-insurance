@@ -28,7 +28,7 @@ describe("Punctuation Tests", () => {
       // Act
       // Simulate a user inputting text into the input field
       // Triggers onChange event
-      fireEvent.change(input, { target: { value: `${tc.input}` } });
+      fireEvent.input(input, { target: { value: `${tc.input}` } });
 
       // Assert
       expect(input.value).toBe(expected);

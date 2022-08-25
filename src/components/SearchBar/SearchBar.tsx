@@ -13,7 +13,7 @@ const SearchBar = () => {
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     let userInput: string = event.target.value;
-    let specCharRegex = /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?\s]/gi;
+    let specCharRegex = /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/gi;
     let specialCharSearch: any = userInput.replace(specCharRegex, " ");
     let removeSpac = specialCharSearch.trim();
     setValue(removeSpac);
